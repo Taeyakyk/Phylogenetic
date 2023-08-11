@@ -1,0 +1,4 @@
+Q <- fnJC(3)
+
+seq ~ dnPhyloCTMC(tree = tree, Q = Q, type = "Standard", branchRates = branch_rates)
+seq.clamp(data)

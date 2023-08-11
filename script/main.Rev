@@ -1,0 +1,47 @@
+# set data
+setwd("/Users/tonchayakhayankan/Documents/phylogenetics_2/project")
+
+# tidy data
+# setOption("collapseSampledAncestors","false")
+
+taxa <- readTaxonData("data/Acosta_new.txt") # list of taxon names
+data <- readDiscreteCharacterData("data/Acosta_new.nex")
+
+# helper variables
+num_taxa <- data.ntaxa() # number of taxa
+num_branches <- 2 * num_taxa - 2 # number of branches in an rooted tree
+
+# Define a set of variables for setting up our MCMC.
+moves    = VectorMoves()
+monitors = VectorMonitors()
+
+# tree model
+source("script/FBD_dating.Rev")
+# clock model
+source("script/clock_strict.Rev")
+#source("script/clock_relaxed_lognormal_fixed.Rev")
+# substitution model
+source("script/Mk.Rev")
+
+# MCMC settings
+mymodel = model(tree)
+mymodel
+
+## define a set of monitors to capture the output.
+# parameters printed to file
+monitors.append( mnModel(filename = "output/clock_strict.log", printgen = 500, exclude = ["F"]) )
+#monitors.append( mnModel(filename = "output/clock_relaxed_lognormal_fixed.log", printgen = 500, exclude = ["F"]) )
+# trees printed to file
+monitors.append( mnFile(filename = "output/clock_strict.trees", printgen = 500, tree) )
+#monitors.append( mnFile(filename = "output/clock_relaxed_lognormal_fixed.trees", printgen = 500, tree) )
+# parameter values printed to screen during the MCMC
+monitors.append( mnScreen(printgen = 500, num_samp_anc, origin_time) )
+
+mymcmc = mcmc(mymodel, monitors, moves)
+mymcmc.run(generations = 800000, tuningInterval = 5000)
+
+trace = readTreeTrace("output/clock_strict.trees")
+mccTree(trace, file = "output/clock_strict.mcc.tre", positiveBranchLengths = TRUE)
+
+#trace = readTreeTrace("output/clock_relaxed_lognormal_fixed.trees")
+#mccTree(trace, file = "output/clock_relaxed_lognormal_fixed.mcc.tre", positiveBranchLengths = TRUE)
