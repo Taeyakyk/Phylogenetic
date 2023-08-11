@@ -1,0 +1,33 @@
+#NEXUS
+
+	Begin taxa;
+	Dimensions ntax=22;
+	Taxlabels
+		Aptenodytes_forsteri
+		Aptenodytes_patagonicus
+		Diomedea
+		Eudyptes_chrysocome
+		Eudyptes_chrysolophus
+		Eudyptes_minor
+		Eudyptes_pachyrrhynchus
+		Fregata
+		Gavia
+		Madrynornis_mirandus
+		Megadytes_antipodes
+		Palaeospheniscus_biloculata
+		Paraptenodytes_antarcticus
+		Pygoscelis_adeliae
+		Pygoscelis_antarctica
+		Pygoscelis_papua
+		Spheniscus_demersus
+		Spheniscus_humboldti
+		Spheniscus_magellanicus
+		Spheniscus_megaramphus
+		Spheniscus_mendiculus
+		Spheniscus_urbinai
+		;
+End;
+
+Begin trees;
+tree TREE1 = [&R](((((((((Spheniscus_humboldti[&index=1]:0.222132,Spheniscus_mendiculus[&index=20]:0.222132)[&index=23,posterior=0.322231,age_95%_HPD={0.000205,0.693243}]:0.243360,Spheniscus_magellanicus[&index=2]:0.465491)[&index=24,posterior=0.690258,age_95%_HPD={0.020441,1.19969}]:0.714926,Spheniscus_demersus[&index=22]:1.180417)[&index=25,posterior=1.000000,age_95%_HPD={0.238679,2.43947}]:3.214991,Eudyptes_minor[&index=8]:4.395408)[&index=26,posterior=0.676103,age_95%_HPD={1.76839,7.00179}]:2.215197,(((Eudyptes_chrysocome[&index=3]:0.532088,Eudyptes_pachyrrhynchus[&index=15]:0.532088)[&index=27,posterior=0.447127,age_95%_HPD={0.033944,1.22268}]:0.560426,Eudyptes_chrysolophus[&index=9]:1.092513)[&index=28,posterior=0.994172,age_95%_HPD={0.117357,2.27231}]:2.858366,Megadytes_antipodes[&index=7]:3.950880)[&index=29,posterior=0.805995,age_95%_HPD={1.74065,6.60789}]:2.659725)[&index=30,posterior=0.699417,age_95%_HPD={3.89554,9.00545}]:2.863551,Madrynornis_mirandus[&index=4,age_95%_HPD={7.25891,11.2722}]:0.323180)[&index=31,posterior=0.844296,age_95%_HPD={7.25107,12.0093}]:7.488663,(Spheniscus_megaramphus[&index=18,age_95%_HPD={5.76022,15.596}]:0.889838,Spheniscus_urbinai[&index=17,age_95%_HPD={5.52753,15.2317}]:0.822966)[&index=32,posterior=0.772689,age_95%_HPD={6.60235,15.9676}]:5.579135)[&index=33,posterior=0.320566,age_95%_HPD={11.8587,22.3944}]:4.467871,((((Pygoscelis_adeliae[&index=14]:1.339562,Pygoscelis_antarctica[&index=12]:1.339562)[&index=34,posterior=0.877602,age_95%_HPD={0.225995,2.56735}]:1.209812,Pygoscelis_papua[&index=11]:2.549375)[&index=35,posterior=0.944213,age_95%_HPD={1.06656,4.6541}]:2.790878,(Aptenodytes_forsteri[&index=16]:1.588550,Aptenodytes_patagonicus[&index=10]:1.588550)[&index=36,posterior=1.000000,age_95%_HPD={0.333857,3.04631}]:3.751703)[&index=37,posterior=1.000000,age_95%_HPD={2.44221,9.04547}]:12.152126,Palaeospheniscus_biloculata[&index=13,age_95%_HPD={15.9773,20.0449}]:0.000001)[&index=38,posterior=0.621982,age_95%_HPD={15.9734,19.9198}]:3.938311)[&index=39,posterior=0.311407,age_95%_HPD={16.377,26.3779}]:3.401064,(((Diomedea[&index=5]:3.633321,Fregata[&index=6]:3.633321)[&index=40,posterior=0.850958,age_95%_HPD={1.1715,6.16802}]:3.067794,Gavia[&index=19]:6.701115)[&index=41,posterior=0.983347,age_95%_HPD={2.66615,11.128}]:9.878442,Paraptenodytes_antarcticus[&index=21,age_95%_HPD={11.6275,21.9704}]:0.031905)[&index=42,posterior=0.701915,age_95%_HPD={11.6082,21.9521}]:8.252198)[&index=43,posterior=1.000000,age_95%_HPD={20.3287,29.1577}]:0.000000;
+End;
